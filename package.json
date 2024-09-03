@@ -1,0 +1,31 @@
+{
+  "name": "directus-local",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "directus start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "extensions": "cd extensions/directus-extension-app-bundle/ && npm i && npm run dev",
+    "build": "npm i && cd extensions/directus-extension-app-bundle/ && npm i && npm run build",
+    "snapshot": "directus schema snapshot ./snapshot.yaml",
+    "snapshot:apply": "directus schema apply ./snapshot.yaml",
+    "snapshot:apply:dry-run": "directus schema apply --dry-run ./snapshot.yaml",
+    "upgrade": "echo \"See notes in UPGRADE_NOTES.md and follow these docs https://docs.directus.io/self-hosted/upgrades-migrations.html\"",
+    "backup-db": "./tasks/pg_backup_db.sh"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@directus/extensions-sdk": "^10.1.5",
+    "directus": "^10.6.0",
+    "directus-extension-display-link": "^1.6.1",
+    "directus-extension-m2m": "^1.0.5",
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.7-rc.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
